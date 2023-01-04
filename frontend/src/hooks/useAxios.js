@@ -3,8 +3,10 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 import { getTokens, selectStorage } from "../utils/handleStorage";
 
+const SERVER_URL = process.env.REACT_APP_SERVER_URL || "http://localhost:8000";
+
 const axInstance = axios.create({
-  baseURL: process.env.REACT_APP_SERVER_URL || "http://localhost:8000",
+  baseURL: SERVER_URL,
 });
 
 axInstance.interceptors.response.use(
@@ -82,4 +84,4 @@ const useAxios = (url, timeout = 1000) => {
   // custom hook returns value
   return { data, error, isLoading };
 };
-export { axInstance, useAxios };
+export { axInstance, useAxios, SERVER_URL };
