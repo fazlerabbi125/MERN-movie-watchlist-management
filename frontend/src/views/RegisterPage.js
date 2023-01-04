@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import withHOC from "../components/withHoc";
 import MessageContext from "../contexts/MessageContext";
 import { signinUser } from '../store/features/userSlice'
 import { useDispatch } from 'react-redux'
 import { useForm } from "react-hook-form";
+import { SERVER_URL } from "../hooks/useAxios";
 
 function SignUpPage() {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -15,7 +16,7 @@ function SignUpPage() {
 
   const registerHandler = (data) => {
 
-    fetch("http://localhost:8000/signup", {
+    fetch(SERVER_URL + "/signup", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -109,4 +110,4 @@ function SignUpPage() {
   );
 }
 
-export default withHOC(SignUpPage, "Create your account");;
+export default withHOC(SignUpPage, "Create your account");
