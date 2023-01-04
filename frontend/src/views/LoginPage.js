@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import withHOC from "../components/withHoc";
 import MessageContext from "../contexts/MessageContext";
 import { useDispatch } from 'react-redux'
 import { signinUser } from '../store/features/userSlice'
-
+import { SERVER_URL } from "../hooks/useAxios";
 
 function LoginPage() {
     const [inputs, setInputs] = useState({});
@@ -22,7 +22,7 @@ function LoginPage() {
 
     const loginHandler = (event) => {
         event.preventDefault();
-        fetch("http://localhost:8000/login", {
+        fetch(SERVER_URL + "/login", {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(inputs),
