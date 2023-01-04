@@ -1,5 +1,5 @@
 import withHOC from "../components/withHoc";
-import { useAxios } from "../hooks/useAxios";
+import { useAxios, SERVER_URL } from "../hooks/useAxios";
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import Delete from "../components/DeleteModal";
@@ -14,7 +14,7 @@ const Details = () => {
     function toggleModal() {
         setModal(!modal);
     }
-    
+
     return (
         <section className="mt-5">
             {isLoading && (
@@ -58,7 +58,7 @@ const Details = () => {
                                     !data.imgUrl
                                         ? poster
                                         : (data.imgUrl.startsWith("/uploads/")
-                                            ? process.env.REACT_APP_SERVER_URL + data.imgUrl
+                                            ? SERVER_URL + data.imgUrl
                                             : data.imgUrl)
                                 }
                                 alt="Poster"
