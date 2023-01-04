@@ -3,7 +3,7 @@ import ReactPaginate from "react-paginate";
 import { useState, useEffect, useContext } from "react";
 import styles from "./MovieList.module.css";
 import poster from "../../assets/poster-not-available.jpg";
-import { axInstance } from "../../hooks/useAxios";
+import { axInstance, SERVER_URL } from "../../hooks/useAxios";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchList } from "../../store/features/watchlistSlice";
 import MessageContext from "../../contexts/MessageContext";
@@ -107,7 +107,7 @@ const MovieList = ({ data, query, setQuery }) => {
                       !item.imgUrl
                         ? poster
                         : (item.imgUrl.startsWith("/uploads/")
-                          ? process.env.REACT_APP_SERVER_URL + item.imgUrl
+                          ? SERVER_URL + item.imgUrl
                           : item.imgUrl)
                     }
                     alt="Poster"
