@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import withHOC from "../components/withHoc";
 import MessageContext from "../contexts/MessageContext";
 import { useForm } from "react-hook-form";
-
+import { SERVER_URL } from "../hooks/useAxios";
 
 function ResetPasswordPage() {
   const { token, id } = useParams();
@@ -13,7 +13,7 @@ function ResetPasswordPage() {
 
   const loginHandler = (data) => {
 
-    fetch("http://localhost:8000/reset-password", {
+    fetch(SERVER_URL + "/reset-password", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
