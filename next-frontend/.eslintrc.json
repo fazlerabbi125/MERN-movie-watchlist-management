@@ -1,0 +1,18 @@
+{
+    "plugins": ["prettier"],
+    "extends": [
+        "next/core-web-vitals",
+        "plugin:prettier/recommended"
+    ],
+    "ignorePatterns": [
+        "node_modules",
+        ".next",
+        ".storybook"
+    ],
+    "rules": {
+        "react/no-unescaped-entities": "off",
+        "@next/next/no-img-element": "off",
+        //Code editor reload required if any formatting is done after change in .prettierrc.json
+        "prettier/prettier": "error"
+    }
+}
