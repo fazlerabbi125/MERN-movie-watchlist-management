@@ -28,7 +28,17 @@ export default tseslint.config(
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-floating-promises': 'warn',
-      '@typescript-eslint/no-unsafe-argument': 'warn'
+      '@typescript-eslint/no-unsafe-argument': 'warn',
+      "@typescript-eslint/no-deprecated": "error",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "no-console": "warn",
+      "@typescript-eslint/no-magic-numbers": ["warn", {
+        ignoreEnums: true,
+        ignoreReadonlyClassProperties: true,
+      }],
+      "@typescript-eslint/no-use-before-define": "error",
+      "@typescript-eslint/no-empty-interface": "warn",
+      "prefer-const": "warn",
     },
   },
 );
