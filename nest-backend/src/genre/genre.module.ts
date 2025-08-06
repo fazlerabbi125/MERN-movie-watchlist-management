@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { GenreController } from '@src/genre/genre.controller';
+import { GenreController } from './genre.controller';
 
 @Module({
     controllers: [GenreController],

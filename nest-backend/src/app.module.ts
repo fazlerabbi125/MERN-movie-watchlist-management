@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AuthModule } from '@src/auth/auth.module';
-import { GenreModule } from '@src/genre/genre.module';
+import { AuthModule } from './auth/auth.module';
+import { GenreModule } from './genre/genre.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import * as path from 'path';
 import { JwtModule } from '@nestjs/jwt';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { UsersModule } from './users/users.module';
 
 @Module({
     imports: [
@@ -37,6 +38,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         }),
         AuthModule,
         GenreModule,
+        UsersModule,
     ],
     controllers: [],
     providers: [],

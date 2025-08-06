@@ -35,6 +35,7 @@ export default tseslint.config(
       "@typescript-eslint/no-magic-numbers": ["warn", {
         ignoreEnums: true,
         ignoreReadonlyClassProperties: true,
+        ignoreNumericLiteralTypes: true,
       }],
       "@typescript-eslint/no-use-before-define": "error",
       "@typescript-eslint/no-empty-interface": "warn",
