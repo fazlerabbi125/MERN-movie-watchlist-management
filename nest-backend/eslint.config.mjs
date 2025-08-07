@@ -32,11 +32,7 @@ export default tseslint.config(
       "@typescript-eslint/no-deprecated": "error",
       "@typescript-eslint/no-unused-vars": "warn",
       "no-console": "warn",
-      "@typescript-eslint/no-magic-numbers": ["warn", {
-        ignoreEnums: true,
-        ignoreReadonlyClassProperties: true,
-        ignoreNumericLiteralTypes: true,
-      }],
+      "@typescript-eslint/no-magic-numbers": "off",
       "@typescript-eslint/no-use-before-define": "error",
       "@typescript-eslint/no-empty-interface": "warn",
       "@typescript-eslint/no-unsafe-call": "off",

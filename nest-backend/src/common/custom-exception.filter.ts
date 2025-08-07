@@ -1,6 +1,5 @@
 import { type ExceptionFilter, Catch, type ArgumentsHost, HttpException } from '@nestjs/common';
 import type { Response } from 'express';
-// import { HttpExceptionBody } from '@nestjs/common';
 import { ErrorResponse } from './common-responses';
 
 @Catch(HttpException)
